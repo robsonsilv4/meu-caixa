@@ -1,0 +1,9 @@
+{% extends 'venda/base.html' %}
+
+{% block content %}
+    {% for venda in vendas %}
+      {{ venda.data }}
+      {{ venda.descricao }}
+      {{ venda.valor }}
+    {% endfor %}
+{% endblock %}
