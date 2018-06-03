@@ -4,6 +4,7 @@
 {% block content %}
 {% if user.is_authenticated %}
   <h1>Dashboard</h1>
+  <a href="{% url 'historico' %}">Histórico</a>
   <a href="{% url 'logout' %}">Sair</a>
 {% else %}
   <h2>Faça o login:</h2>
