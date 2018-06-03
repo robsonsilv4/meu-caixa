@@ -1,0 +1,12 @@
+{% extends 'venda/base.html' %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Dashboard</h1>
+  <a href="{% url 'logout' %}">Sair</a>
+{% else %}
+  <h2>Faça o login:</h2>
+  <a href="{% url 'login' %}">Login</a>
+{% endif %}
+{% endblock %}
