@@ -6,6 +6,12 @@
   <h1>Dashboard</h1>
   <a href="{% url 'historico' %}">Histórico</a>
   <a href="{% url 'logout' %}">Sair</a>
+
+  {% for venda in vendas %}
+    {{ venda.data }}
+    {{ venda.descricao }}
+    {{ venda.valor }}
+  {% endfor %}
 {% else %}
   <h2>Faça o login:</h2>
   <a href="{% url 'login' %}">Login</a>

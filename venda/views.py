@@ -4,7 +4,8 @@ from .models import Venda
 
 
 def inicio(request):
-    return render(request, 'venda/index.html')
+    vendas = Venda.objects.filter(data__lte=timezone.now()).order_by('data')[:10]
+    return render(request, 'venda/index.html', {'vendas': vendas})
 
 
 def historico(request):
