@@ -7,11 +7,27 @@
   <a href="{% url 'historico' %}">Histórico</a>
   <a href="{% url 'logout' %}">Sair</a>
 
-  {% for venda in vendas %}
-    {{ venda.data }}
-    {{ venda.descricao }}
-    {{ venda.valor }}
-  {% endfor %}
+  <h2>Últimas Vendas</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Data</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for venda in vendas %}
+        <tr>
+          <td>{{ venda.id }}</td>
+          <td>{{ venda.data }}</td>
+          <td>{{ venda.descricao }}</td>
+          <td>{{ venda.valor }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% else %}
   <h2>Faça o login:</h2>
   <a href="{% url 'login' %}">Login</a>

@@ -1,14 +1,37 @@
 {% extends 'venda/base.html' %}
+{% load bootstrap4 %}
+
+{% block title %}Histórico{% endblock %}
 
 {% block content %}
-  <form method="get">
-    <input type="text" name="q" value="{{ request.GET.q }}">
-    <button type="submit">Pesquisar</button>
-  </form>
-  
-  {% for venda in vendas %}
-    {{ venda.data }}
-    {{ venda.descricao }}
-    {{ venda.valor }}
-  {% endfor %}
+  <h2>Histórico</h2>
+
+  <div class="form-group">
+    <form method="get">
+      <input type="text" name="q" value="{{ request.GET.q }}" class="form-control">
+      <button type="submit" class="btn btn-primary form-control">Pesquisar</button>
+    </form>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Data</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for venda in vendas %}
+        <tr>
+          <td>{{ venda.id }}</td>
+          <td>{{ venda.data }}</td>
+          <td>{{ venda.descricao }}</td>
+          <td>{{ venda.valor }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
 {% endblock %}
