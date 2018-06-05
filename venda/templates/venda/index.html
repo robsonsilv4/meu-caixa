@@ -4,10 +4,14 @@
 {% block content %}
 {% if user.is_authenticated %}
   <h1>Dashboard</h1>
-  <a href="{% url 'historico' %}">Histórico</a>
-  <a href="{% url 'logout' %}">Sair</a>
 
-  <h2>Últimas Vendas</h2>
+  <div class="container">
+    <a href="{% url 'adicionar' %}" class="btn btn-success">Adicionar</a>
+    <a href="{% url 'historico' %}" class="btn btn-secondary">Pesquisar</a>
+  </div>
+  <br>
+  
+  <h4 class="font-italic">Últimas Vendas</h4>
   <table class="table">
     <thead>
       <tr>
