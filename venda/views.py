@@ -47,7 +47,5 @@ def atualizar(request, id):
 # Deletar
 def deletar(request, id):
     venda = Venda.objects.get(id=id)
-
-    if request.method == 'POST':
-        venda.delete()
-        return redirect('historico')
+    venda.delete()
+    return redirect('historico')

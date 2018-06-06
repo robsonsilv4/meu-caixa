@@ -5,7 +5,7 @@
 
 {% block content %}
   <div class="form-group">
-    <form method="get">
+    <form method="post">
       {% csrf_token %}
       {% bootstrap_form form %}
       <button type="submit" class="btn btn-primary">Adicionar</button>

@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Venda(models.Model):
     data = models.DateTimeField(default=timezone.now)
-    descricao = models.TextField()
+    descricao = models.CharField(max_length=255)
     valor = models.DecimalField(max_digits=5, decimal_places=2)
 
     def adicionar(self):
