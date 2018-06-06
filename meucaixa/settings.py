@@ -26,6 +26,7 @@ SECRET_KEY = '$3rjcjt_rp!f#-46t9h4w-3^abf3+l^p86@*9%#jn(lo5_oc6f'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'robsons.pythonanywhere.com',
 ]
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'venda',
     'bootstrap4',
+    'fa',
 ]
 
 MIDDLEWARE = [

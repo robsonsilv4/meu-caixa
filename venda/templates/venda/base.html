@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>Histórico</title>
     {% bootstrap_css %}
+    {% bootstrap_messages %}
   </head>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,6 +30,8 @@
       {% block content %}
       {% endblock %}
     </div>
+
+    {% bootstrap_javascript jquery='full' %}
   </body>
 
 </html>

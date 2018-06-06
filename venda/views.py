@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
+from django.db.models import Q
 from .models import Venda
 from .forms import VendaForm
 
@@ -16,7 +17,11 @@ def historico(request):
 
     pesquisa = request.GET.get('q')
     if pesquisa:
-        vendas = vendas.filter(descricao__icontains=pesquisa)
+        vendas = vendas.filter(
+            Q(id__icontains=pesquisa) |
+            Q(data__icontains=pesquisa) |
+            Q(descricao__icontains=pesquisa)
+            )
 
     return render(request, 'venda/historico.html', {'vendas': vendas})
 
