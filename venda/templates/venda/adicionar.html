@@ -4,11 +4,11 @@
 {% block title %}Histórico{% endblock %}
 
 {% block content %}
+<form method="post">
   <div class="form-group">
-    <form method="post">
-      {% csrf_token %}
-      {% bootstrap_form form %}
-      <button type="submit" class="btn btn-primary">Adicionar</button>
-    </form>
+    {% csrf_token %}
+    {% bootstrap_form form %}
   </div>
+  <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
 {% endblock %}
