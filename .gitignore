@@ -4,3 +4,4 @@ __pycache__
 venv
 banco.sqlite3
 /static
+.vscode

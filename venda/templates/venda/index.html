@@ -3,13 +3,6 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  <div class="jumbotron">
-    <h1>Dashboard</h1>
-
-    <a href="{% url 'adicionar' %}" class="btn btn-success">Adicionar</a>
-    <a href="{% url 'historico' %}" class="btn btn-secondary">Pesquisar</a>
-  </div>
-
   <h4 class="font-italic">Últimas Vendas</h4>
   <table class="table">
     <thead>

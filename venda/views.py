@@ -7,7 +7,8 @@ from .forms import VendaForm
 
 # Dashboard
 def inicio(request):
-    vendas = Venda.objects.filter(data__lte=timezone.now()).order_by('data')[:10]
+    vendas = Venda.objects.filter(
+        data__lte=timezone.now()).order_by('data')[:10]
     return render(request, 'venda/index.html', {'vendas': vendas})
 
 
@@ -21,7 +22,7 @@ def historico(request):
             Q(id__icontains=pesquisa) |
             Q(data__icontains=pesquisa) |
             Q(descricao__icontains=pesquisa)
-            )
+        )
 
     return render(request, 'venda/historico.html', {'vendas': vendas})
 
